@@ -16,3 +16,7 @@ In `experts/`, the provided expert policies are:
 * Walker2d-v1.pkl
 
 The name of the pickle file corresponds to the name of the gym environment.
+
+## My solution
+
+I didn't do any plots, but both dagger and cloning seems to work fine. The expert player also saves the data for cloning, now.

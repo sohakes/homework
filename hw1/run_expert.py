@@ -15,6 +15,7 @@ import numpy as np
 import tf_util
 import gym
 import load_policy
+import os
 
 def main():
     import argparse
@@ -23,6 +24,7 @@ def main():
     parser.add_argument('envname', type=str)
     parser.add_argument('--render', action='store_true')
     parser.add_argument("--max_timesteps", type=int)
+    #parser.add_argument("--number_episodes", type=int, default=1)
     parser.add_argument('--num_rollouts', type=int, default=20,
                         help='Number of expert roll outs')
     args = parser.parse_args()
@@ -65,8 +67,14 @@ def main():
         print('mean return', np.mean(returns))
         print('std of return', np.std(returns))
 
+
         expert_data = {'observations': np.array(observations),
                        'actions': np.array(actions)}
+
+        with open('expert_runs/'+args.envname+ '.pkl', 'wb') as f:
+            pickle.dump(expert_data, f, pickle.HIGHEST_PROTOCOL)        
+        
+
 
 if __name__ == '__main__':
     main()
