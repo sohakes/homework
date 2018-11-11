@@ -14,3 +14,7 @@ Before doing anything, first replace `gym/envs/box2d/lunar_lander.py` with the p
 The only file that you need to look at is `train_pg_f18.py`, which you will implement.
 
 See the [HW2 PDF](http://rail.eecs.berkeley.edu/deeprlcourse/static/homeworks/hw2.pdf) for further instructions.
+
+## My observations
+
+I didn't run the Lunar Lander yet since it takes a really long time here. Until then, I'm not sure if I implemented the baseline correctly (it doesn't give an error, but it doesn't seem to speed up the cart pole env).
