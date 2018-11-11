@@ -506,7 +506,8 @@ class Agent(object):
             # Agent.compute_advantage.)
 
             # YOUR_CODE_HERE
-            target_n = q_n 
+            target_n = q_n
+            target_n = (target_n - np.mean(target_n))/np.std(target_n)
             self.sess.run([self.baseline_update_op], feed_dict={self.sy_ob_no:ob_no, self.sy_target_n: target_n})
 
         #====================================================================================#
